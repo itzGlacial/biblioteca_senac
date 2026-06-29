@@ -25,3 +25,15 @@ def test_emprestar_livro():
 
     assert b.livros[0]["disponivel"] is False
     assert "Duna" in b.usuarios[0]["livros_emprestados"]
+    
+
+def test_livro_ja_emprestado(capsys):
+    b.adicionar_livro("Livro 1", "Autor")
+    b.registrar_usuario("Joao")
+    b.registrar_usuario("Maria")
+
+    b.emprestar_livro("Joao", "Livro 1")
+    b.emprestar_livro("Maria", "Livro 1")
+
+    captured = capsys.readouterr()
+    assert "já está emprestado" in captured.out
