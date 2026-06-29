@@ -1,4 +1,3 @@
-# =========================
 # SISTEMA DE BIBLIOTECA
 # =========================
 
@@ -6,7 +5,6 @@ livros = []
 usuarios = []
 
 
-# -------------------------
 # LIVROS
 # -------------------------
 def adicionar_livro(titulo, autor):
@@ -34,7 +32,6 @@ def listar_livros():
         print(f'{livro["titulo"]} - {livro["autor"]} [{status}]')
 
 
-# -------------------------
 # USUÁRIOS
 # -------------------------
 def registrar_usuario(nome):
@@ -54,7 +51,6 @@ def listar_usuarios():
         print(f'Nome: {usuario["nome"]} | Livros: {usuario["livros_emprestados"]}')
 
 
-# -------------------------
 # EMPRÉSTIMOS
 # -------------------------
 def emprestar_livro(nome_usuario, titulo_livro):
@@ -85,7 +81,6 @@ def livros_emprestados():
             print(livro["titulo"])
 
 
-# -------------------------
 # MENU
 # -------------------------
 def menu():
@@ -139,7 +134,6 @@ def menu():
 
         except ValueError:
             print("Digite um número válido.")
-
 
 if __name__ == "__main__":
     menu()
